@@ -1,8 +1,12 @@
 # Codio
 
+[![SupremeDeity](https://circleci.com/gh/SupremeDeity/Codio.svg?style=shield)](https://app.circleci.com/pipelines/github/SupremeDeity)
+
 Codio, a application made to teach coding to people.
 
-![Codio Icon](/assets/icons/splash.png)
+<p align="center">
+  <img src="/assets/icons/splash.png">
+</p>
 
 ## Courses
 
@@ -18,7 +22,7 @@ However more courses may be added in the future depending on the popularity.
 
 ## Goals
 
-- [ ] Moving From Ionic React to Flutter
+- [x] Moving From Ionic React to Flutter
 - [ ] C++ Course Complete
 - [ ] C# Course Complete
 - [ ] Python Course Complete
