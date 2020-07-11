@@ -1,11 +1,14 @@
-import 'package:Codio/Custom/Bars.dart';
-import 'package:Codio/Custom/Cards.dart';
-import 'package:Codio/Custom/Codeblock.dart';
-import 'package:Codio/Custom/PremadeStyle.dart';
-import 'package:flutter/material.dart';
-import 'package:Codio/Custom/CustomColors.dart';
+///
+/// BasicProgram.dart - SupremeDeity (https://github.com/SupremeDeity
+///
 
-const String basicprogram = """
+import 'package:Codio/Components/Bars.dart';
+import 'package:Codio/Components/Codeblock.dart';
+import 'package:Codio/Components/PremadeStyle.dart';
+import 'package:flutter/material.dart';
+import 'package:Codio/Components/CustomColors.dart';
+
+const String _basicprogram = """
 #include <iostream>
 
 using namespace std;
@@ -40,7 +43,7 @@ class CppBasicProgram extends StatelessWidget {
                     textstyle1(text: """
 There was a lot of rambling on about some things that a programmar should know but no code regarding C++ was actually shown. So here is a small snippet of a very basic C++ program that prints Hello World! to the screen:
 """, align: TextAlign.start, size: 15, weight: FontWeight.normal),
-                    Codeblock(basicprogram, "cpp"),
+                    Codeblock(code: _basicprogram, language: "cpp"),
                     textstyle1(
                         text: """
 

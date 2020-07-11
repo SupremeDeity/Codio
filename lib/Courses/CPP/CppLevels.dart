@@ -1,10 +1,40 @@
-import 'package:Codio/Courses/CPP/Level1/Level1Index.dart';
-import 'package:Codio/Courses/CPP/Level2/Level2Index.dart';
-import 'package:Codio/Custom/Cards.dart';
-import 'package:Codio/Custom/CustomColors.dart';
+///
+/// CppLevels.dart - SupremeDeity (https://github.com/SupremeDeity
+/// Description: shows a list of all available 'levels' for the course
+///
+
+import 'package:Codio/Components/Cards.dart';
+import 'package:Codio/Components/CustomColors.dart';
+import 'package:Codio/IndexManager.dart';
 import 'package:flutter/material.dart';
-import '../../Custom/Bars.dart';
-import '../../Custom/Buttons.dart';
+import '../../Components/Bars.dart';
+import '../../Components/Buttons.dart';
+
+var info = [
+  {
+    "name": "Level 1",
+    "icon": "assets/icons/cpp-icon.png",
+  },
+  {
+    "name": "Level 2",
+    "icon": "assets/icons/cpp-icon.png",
+  },
+];
+
+List<Widget> _createWidgets(context) {
+  List<Widget> _widgets = [];
+  for (var i = 0; i < info.length; i++) {
+    _widgets.add(
+      CourseButon(
+        info[i]['name'],
+        info[i]['icon'],
+        IndexManager("C++", info[i]['name']),
+        context,
+      ),
+    );
+  }
+  return _widgets;
+}
 
 class CppLevel extends StatelessWidget {
   @override
@@ -23,18 +53,7 @@ class CppLevel extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            CourseButon(
-              "Level 1",
-              "assets/icons/cpp-icon.png",
-              Level1Index(),
-              context,
-            ),
-            CourseButon(
-              "Level 2",
-              "assets/icons/cpp-icon.png",
-              Level2Index(),
-              context,
-            ),
+            ..._createWidgets(context)
           ]),
         ),
         bottomNavigationBar: footer(),

@@ -1,4 +1,9 @@
-import 'package:Codio/Custom/CustomColors.dart';
+///
+/// Buttons.dart - SupremeDeity (https://github.com/SupremeDeity
+/// Description: Customized Raised Buttons for showing courses
+///
+
+import './CustomColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

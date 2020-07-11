@@ -1,4 +1,9 @@
-import 'package:Codio/Custom/CustomColors.dart';
+///
+/// Bars.dart - SupremeDeity (https://github.com/SupremeDeity
+/// Description: helper functions to easily display header and footer for Codio
+///
+
+import './CustomColors.dart';
 import 'package:flutter/material.dart';
 
 AppBar header() {

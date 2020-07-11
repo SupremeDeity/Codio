@@ -1,9 +1,12 @@
-import 'package:Codio/Custom/Bars.dart';
-import 'package:Codio/Custom/Cards.dart';
-import 'package:Codio/Custom/Codeblock.dart';
-import 'package:Codio/Custom/PremadeStyle.dart';
+///
+/// Intro2.dart - SupremeDeity (https://github.com/SupremeDeity
+///
+
+import 'package:Codio/Components/Bars.dart';
+import 'package:Codio/Components/Codeblock.dart';
+import 'package:Codio/Components/PremadeStyle.dart';
 import 'package:flutter/material.dart';
-import 'package:Codio/Custom/CustomColors.dart';
+import 'package:Codio/Components/CustomColors.dart';
 
 String code = """
 _fib:
@@ -69,7 +72,7 @@ Just in case you were wondering how a low-level language looks like, this is x86
                     size: 15,
                     weight: FontWeight.normal,
                   ),
-                  Codeblock(code, "x86asm")
+                  Codeblock(code: code, language: "x86asm")
                 ]),
               ),
             ],

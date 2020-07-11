@@ -1,4 +1,9 @@
-import 'package:Codio/Custom/CustomColors.dart';
+///
+/// Cards.dart - SupremeDeity (https://github.com/SupremeDeity
+/// Description: Custom Cards for use in Codio
+///
+
+import './CustomColors.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {

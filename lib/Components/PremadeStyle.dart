@@ -1,3 +1,8 @@
+///
+/// PremadeStyle.dart - SupremeDeity (https://github.com/SupremeDeity
+/// Description: Customisable text styles.
+///
+
 import 'package:flutter/material.dart';
 
 Text textstyle1({

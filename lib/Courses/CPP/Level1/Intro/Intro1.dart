@@ -1,8 +1,12 @@
-import 'package:Codio/Custom/Bars.dart';
-import 'package:Codio/Custom/Cards.dart';
-import 'package:Codio/Custom/PremadeStyle.dart';
+///
+/// Intro1.dart - SupremeDeity (https://github.com/SupremeDeity
+///
+
+import 'package:Codio/Components/Bars.dart';
+import 'package:Codio/Components/Cards.dart';
+import 'package:Codio/Components/PremadeStyle.dart';
 import 'package:flutter/material.dart';
-import 'package:Codio/Custom/CustomColors.dart';
+import 'package:Codio/Components/CustomColors.dart';
 
 class Intro1 extends StatelessWidget {
   @override

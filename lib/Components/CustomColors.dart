@@ -1,3 +1,11 @@
+///
+/// CustomColors.dart - SupremeDeity (https://github.com/SupremeDeity
+/// Description:
+/// A static class with color constants.
+/// This class is 'static' and cannot be instantiated.
+/// All Colors defined here are based on Ionic's predefined color constants.
+///
+
 import 'package:flutter/material.dart';
 
 class CustomColors {

@@ -1,6 +1,6 @@
-import 'package:Codio/Custom/Bars.dart';
-import 'package:Codio/Custom/Cards.dart';
-import 'package:Codio/Custom/PremadeStyle.dart';
+import 'package:Codio/Components/Bars.dart';
+import 'package:Codio/Components/Cards.dart';
+import 'package:Codio/Components/PremadeStyle.dart';
 import 'package:flutter/material.dart';
 
 class Level2Index extends StatelessWidget {

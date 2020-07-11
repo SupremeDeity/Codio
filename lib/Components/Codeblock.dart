@@ -1,4 +1,9 @@
-import 'package:Codio/Custom/CustomColors.dart';
+///
+/// Codeblock.dart - SupremeDeity (https://github.com/SupremeDeity
+/// Description: A wrapper component around flutter_highlight for easy display of codeblocks
+///
+
+import './CustomColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 
@@ -8,7 +13,7 @@ class Codeblock extends StatelessWidget {
   final String code;
   final String language;
 
-  Codeblock(this.code, this.language);
+  Codeblock({this.code, this.language = "text"});
 
   @override
   Widget build(BuildContext context) {
