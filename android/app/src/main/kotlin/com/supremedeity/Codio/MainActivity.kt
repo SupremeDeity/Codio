@@ -1,4 +1,4 @@
-package com.example.Codio
+package com.supremedeity.Codio
 
 import io.flutter.embedding.android.FlutterActivity
 

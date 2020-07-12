@@ -14,7 +14,7 @@ const String _basicprogram = """
 using namespace std;
 
 int main() {
-  cout << "Hello World!" << endl;
+  cout << "Hello World!";
 
   return 0;
 }
@@ -44,13 +44,25 @@ class CppBasicProgram extends StatelessWidget {
 There was a lot of rambling on about some things that a programmar should know but no code regarding C++ was actually shown. So here is a small snippet of a very basic C++ program that prints Hello World! to the screen:
 """, align: TextAlign.start, size: 15, weight: FontWeight.normal),
                     Codeblock(code: _basicprogram, language: "cpp"),
-                    textstyle1(
-                        text: """
+                  ])),
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(10),
+                color: CustomColors.primary,
+                child: textstyle1(text: "Main Function", size: 20),
+              ),
+              Container(
+                  padding: EdgeInsets.all(10),
+                  color: CustomColors.dark,
+                  child: Column(children: [
+                    textstyle1(text: """
+Let's not worry about the other stuff for now and take a look at a very important function (more on this topic later).
+""", align: TextAlign.start, size: 15, weight: FontWeight.normal),
+                    textstyle2(text: """int main() {}"""),
+                    textstyle1(text: """
 
-If you already know some programming this wont be too hard to understand and for beginners, no need to worry because all the statements written here and much more will be explained later on.""",
-                        align: TextAlign.start,
-                        size: 15,
-                        weight: FontWeight.normal)
+This is called the main function. This is the starting point of any program. Any code you put inside this function will be automatically executed. Other custom functions dont get called automatically and must be called directly or indirectly from the main function.
+""", align: TextAlign.start, size: 15, weight: FontWeight.normal),
                   ])),
             ],
           )

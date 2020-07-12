@@ -1,6 +1,6 @@
-import 'package:Codio/Courses/CPP/CppLevels.dart';
 import 'package:Codio/Courses/CPP/Level1/Level1Index.dart';
 import 'package:Codio/Courses/CPP/Level2/Level2Index.dart';
+import 'package:Codio/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
 var info = {
@@ -14,10 +14,8 @@ class IndexManager extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: info[language][level],
-      ),
+    return Scaffold(
+      body: SplashScreen(info[language][level]),
     );
   }
 }

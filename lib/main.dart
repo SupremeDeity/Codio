@@ -4,10 +4,10 @@
 ///
 import 'dart:io';
 import 'package:Codio/LevelManager.dart';
+import 'package:Codio/RouteGenerator.dart';
 import 'package:flutter/material.dart';
 import 'package:yaml/yaml.dart';
 
-import 'Courses/CPP/CppLevels.dart';
 import 'Components/CustomColors.dart';
 import 'Components/Bars.dart';
 import 'Components/Buttons.dart';
@@ -36,13 +36,16 @@ var info = [
 ];
 
 List<Widget> _createWidgets(context) {
-  List<Widget> _widgets = [];
+  List<Widget> _widgets = <Widget>[];
   for (var i = 0; i < info.length; i++) {
     _widgets.add(
-      CourseButon(
+      CourseButon.route(
         info[i]['name'],
         info[i]['icon'],
-        LevelManager(info[i]['name']),
+        () {
+          Navigator.of(context)
+              .pushNamed("/LevelManager", arguments: info[i]['name']);
+        },
         context,
       ),
     );
@@ -54,8 +57,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/',
-      routes: {"/": (context) => Codio()},
+      initialRoute: "/",
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }
@@ -78,19 +81,6 @@ class Codio extends StatelessWidget {
               ),
             ),
             ..._createWidgets(context)
-            /*
-            CourseButon(
-              "C++",
-              "assets/icons/cpp-icon.png",
-              CppLevel(),
-              context,
-            ),
-            CourseButon(
-              "C#",
-              "assets/icons/csharp-icon.png",
-              App(),
-              context,
-            ),*/
           ]),
         ),
         bottomNavigationBar: footer(),

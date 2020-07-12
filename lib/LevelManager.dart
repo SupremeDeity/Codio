@@ -1,4 +1,10 @@
+///
+/// LevelManager.dart - SupremeDeity (https://github.com/SupremeDeity
+/// Description: displays different level screens depending on arguments
+///
+
 import 'package:Codio/Courses/CPP/CppLevels.dart';
+import 'package:Codio/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
 var info = {
@@ -11,10 +17,8 @@ class LevelManager extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: info[language],
-      ),
+    return Scaffold(
+      body: SplashScreen(info[language]),
     );
   }
 }

@@ -5,7 +5,6 @@
 
 import 'package:Codio/Components/Cards.dart';
 import 'package:Codio/Components/CustomColors.dart';
-import 'package:Codio/IndexManager.dart';
 import 'package:flutter/material.dart';
 import '../../Components/Bars.dart';
 import '../../Components/Buttons.dart';
@@ -25,10 +24,14 @@ List<Widget> _createWidgets(context) {
   List<Widget> _widgets = [];
   for (var i = 0; i < info.length; i++) {
     _widgets.add(
-      CourseButon(
+      CourseButon.route(
         info[i]['name'],
         info[i]['icon'],
-        IndexManager("C++", info[i]['name']),
+        //IndexManager("C++", info[i]['name']),
+        () {
+          Navigator.of(context)
+              .pushNamed("/IndexManager", arguments: ["C++", info[i]['name']]);
+        },
         context,
       ),
     );

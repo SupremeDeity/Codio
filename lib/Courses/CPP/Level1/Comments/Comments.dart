@@ -1,5 +1,5 @@
 ///
-/// IDE.dart - SupremeDeity (https://github.com/SupremeDeity
+/// Comments.dart - SupremeDeity (https://github.com/SupremeDeity
 ///
 
 import 'package:Codio/Components/Bars.dart';
@@ -7,14 +7,14 @@ import 'package:Codio/Components/PremadeStyle.dart';
 import 'package:flutter/material.dart';
 import 'package:Codio/Components/CustomColors.dart';
 
-class CppIDE extends StatelessWidget {
+class CppComments extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: CustomColors.darker,
         appBar: header(),
-        body: ListView(physics: PageScrollPhysics(), children: [
+        body: ListView(children: [
           Column(
             children: [
               Container(
