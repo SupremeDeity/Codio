@@ -1,5 +1,7 @@
+import 'package:Codio/RouteGenerator.dart';
+
 ///
-/// Buttons.dart - SupremeDeity (https://github.com/SupremeDeity
+/// Buttons.dart - SupremeDeity (https://github.com/SupremeDeity)
 /// Description: Customized Raised Buttons for showing courses
 ///
 
@@ -7,43 +9,57 @@ import './CustomColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-void _navigate(BuildContext context, Widget navTo) {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => navTo));
-}
+import 'TextStyles.dart';
 
-class CourseButon extends StatelessWidget {
-  final String courseName;
-  final String courseImg;
-  final Widget funcHandle;
+/// Button Template.
+class ButtonStyleOne extends StatelessWidget {
+  final String name;
+  final String img;
+  final Widget widgetHandle;
   final Function routeHandle;
   final BuildContext inputContext;
-  CourseButon(
-      this.courseName, this.courseImg, this.funcHandle, this.inputContext)
-      : routeHandle = null;
 
-  CourseButon.route(
-      this.courseName, this.courseImg, this.routeHandle, this.inputContext)
-      : funcHandle = null;
+  /// For Use with navigating to widgets.
+  ButtonStyleOne(
+    this.name,
+    this.img,
+    this.widgetHandle,
+    this.inputContext,
+  ) : routeHandle = null;
+
+  /// For navigating to routes.
+  ButtonStyleOne.route(
+    this.name,
+    this.img,
+    this.routeHandle,
+    this.inputContext,
+  ) : widgetHandle = null;
 
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
-      minWidth: 200,
-      child: RaisedButton.icon(
-          color: CustomColors.primary,
-          onPressed: routeHandle == null
-              ? () => _navigate(context, funcHandle)
-              : routeHandle,
-          icon: Image.asset(
-            courseImg,
-            fit: BoxFit.contain,
-            width: 32,
-            height: 32,
-          ),
-          label: Text(
-            courseName,
-            style: TextStyle(fontFamily: "Roboto", fontWeight: FontWeight.w800),
-          )),
-    );
+        minWidth: 200,
+        child: RaisedButton(
+            color: CustomColors.primary,
+            onPressed: (routeHandle == null
+                ? () => RouteGenerator.navigate(context, widgetHandle)
+                : routeHandle),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset(
+                  img,
+                  fit: BoxFit.contain,
+                  width: 32,
+                  height: 32,
+                ),
+                textstyle4(
+                    text: name,
+                    color: CustomColors.dark,
+                    size: 15,
+                    weight: FontWeight.normal),
+              ],
+            )));
   }
 }

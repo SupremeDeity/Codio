@@ -1,5 +1,5 @@
 ///
-/// Cards.dart - SupremeDeity (https://github.com/SupremeDeity
+/// Cards.dart - SupremeDeity (https://github.com/SupremeDeity)
 /// Description: Custom Cards for use in Codio
 ///
 
@@ -20,7 +20,7 @@ class CustomCard extends StatelessWidget {
           color: CustomColors.dark,
           child: Column(mainAxisSize: MainAxisSize.min, children: [
             Container(
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.all(15),
               child: Column(
                 children: widgets,
               ),
@@ -44,17 +44,17 @@ class ButtonCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 100,
-        width: 100,
         margin: EdgeInsets.all(5),
         child: RaisedButton(
           color: color,
           disabledColor: disabledColor,
           onPressed: onTap,
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              children: content),
+          child: Flex(
+            direction: Axis.vertical,
+            mainAxisSize: MainAxisSize.max,
+            children: content,
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
         ));
   }
 }

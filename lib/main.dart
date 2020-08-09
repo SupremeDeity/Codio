@@ -1,12 +1,12 @@
+import 'package:Codio/Components/TextStyles.dart';
+
 ///
 /// main.dart - SupremeDeity (https://github.com/SupremeDeity
 /// Description: Main Page for Codio
 ///
-import 'dart:io';
-import 'package:Codio/LevelManager.dart';
 import 'package:Codio/RouteGenerator.dart';
+import 'package:Codio/SharedPrefs.dart';
 import 'package:flutter/material.dart';
-import 'package:yaml/yaml.dart';
 
 import 'Components/CustomColors.dart';
 import 'Components/Bars.dart';
@@ -18,28 +18,29 @@ void main() => runApp(App());
 
 // This function is for debug purposes only!
 String debug() {
-  String path = Directory.current.absolute.path;
-  var yaml = loadYaml(File(path + "\\pubspec.yaml").readAsStringSync());
+  SharedPrefs sharedprefs = SharedPrefs();
 
   return ("""
-  Name: ${yaml['name']}
-  Description: ${yaml['description']}
-  Version: ${yaml['version']}
-  Environment: ${yaml['environment']}
-  Dependencies: ${yaml['dependencies']}
+  Name: ${sharedprefs.appName}
+  Version: ${sharedprefs.version}
+  Build Number: ${sharedprefs.buildNumber}
+  Package: ${sharedprefs.packageName}
   """);
 }
 
 var info = [
   {"name": "C++", "icon": "assets/icons/cpp-icon.png"},
-  {"name": "C#", "icon": "assets/icons/csharp-icon.png"},
+  // {"name": "C#", "icon": "assets/icons/csharp-icon.png"},
 ];
 
 List<Widget> _createWidgets(context) {
   List<Widget> _widgets = <Widget>[];
+
+  _widgets.add(textstyle4(text: "Courses", size: 15, weight: FontWeight.bold));
+
   for (var i = 0; i < info.length; i++) {
     _widgets.add(
-      CourseButon.route(
+      ButtonStyleOne.route(
         info[i]['name'],
         info[i]['icon'],
         () {
@@ -59,6 +60,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       initialRoute: "/",
       onGenerateRoute: RouteGenerator.generateRoute,
+      onUnknownRoute: RouteGenerator.errorRoute,
     );
   }
 }
@@ -66,25 +68,13 @@ class App extends StatelessWidget {
 class Codio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: CustomColors.darker,
-        appBar: header(),
-        body: Center(
-          child: CustomCard(widgets: [
-            Text(
-              "COURSES",
-              style: TextStyle(
-                fontFamily: "Roboto",
-                fontWeight: FontWeight.bold,
-                color: CustomColors.light,
-              ),
-            ),
-            ..._createWidgets(context)
-          ]),
-        ),
-        bottomNavigationBar: footer(),
+    return Scaffold(
+      backgroundColor: CustomColors.darker,
+      appBar: header(),
+      body: Center(
+        child: CustomCard(widgets: _createWidgets(context)),
       ),
+      bottomNavigationBar: footer(),
     );
   }
 }

@@ -3,60 +3,124 @@
 ///
 
 import 'package:Codio/Components/Bars.dart';
-import 'package:Codio/Components/PremadeStyle.dart';
+import 'package:Codio/Components/Cards.dart';
+import 'package:Codio/Components/Codeblock.dart';
+import 'package:Codio/Components/TextStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:Codio/Components/CustomColors.dart';
+
+String singleline = """
+// This is a single-line comment
+This line wont be considered comment
+int myInt = 2; // You can put them after statements.
+""";
+String multiline = """
+/*
+We can write whatever we want here 
+and it will be considered a comment. 
+This can span as many lines as we want.
+*/
+This line wont be considered a comment
+""";
 
 class CppComments extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: CustomColors.darker,
-        appBar: header(),
-        body: ListView(children: [
-          Column(
-            children: [
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(10),
-                color: CustomColors.primary,
-                child: textstyle1(text: "IDE", size: 20),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                color: CustomColors.dark,
-                child: textstyle1(text: """
-An IDE(Integrated Development Environment) is a tool that is used to write programs. A IDE is
-basically different tools packed into one to help ease in writing programs. A IDE typically contains a text editor to write code in, a debugger to debug code and a compiler/linker to compile and link the program into a executable format.
+    return Scaffold(
+      backgroundColor: CustomColors.darker,
+      appBar: header(),
+      body: ListView(children: [
+        Column(
+          children: [
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(10),
+              color: CustomColors.primary,
+              child: textstyle1(text: "Comments", size: 20),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              color: CustomColors.dark,
+              child: textstyle1(text: """
+While programming there might come a time when you want to explain what a function or line of code does. This maybe because you are sharing your code with others and you want to explain them the usage of the code or maybe you want to keep a pointer for your own self.
 
-Logically speaking, C++ code can written in any text editor like notepad and then compiled using a compiler. However writing code this way is inefficient as this errors will not be shown to you while you write the code, improvement to code and warnings will not be shown and overall the tools provided by a IDE will not be available.
+This is where comments come in. You can easily put lines of text to explain what you want and these wont interfere with the code. Comments simply dont get compiled.
 
-There are many different IDEs available to write code in C++. Examples of these are Visual Studio, Visual Studio Code and Codeblock.
+We have been using comments in the previous topics. There are two types of comments:
+
+1. Single-line comments
+2. Multi-line comments
 """, align: TextAlign.start, size: 15, weight: FontWeight.normal),
-              ),
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(10),
-                color: CustomColors.primary,
-                child: textstyle1(text: "Visual Studio", size: 20),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                color: CustomColors.dark,
-                child: textstyle1(
+            ),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(10),
+              color: CustomColors.primary,
+              child: textstyle1(text: "Single-line comments", size: 20),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              color: CustomColors.dark,
+              child: Column(children: [
+                textstyle1(
                   text: """
-While you can use other IDEs, we will be recommending that you use Visual studio. It is developed and maintained by Microsoft and is free to use. It is an excellent IDE with a very good compiler and useful features like intellisense which highlights errors and warnings. The UI looks good too and setting up projects is pretty easy aswell.
+Single-line comments start with double forward slashes (//). These make whatever is written after them into a comment. However as the name suggest, they only work for single lines.
 """,
                   align: TextAlign.start,
                   size: 15,
                   weight: FontWeight.normal,
                 ),
+                Codeblock(
+                  code: singleline,
+                  language: "cpp",
+                ),
+              ]),
+            ),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(10),
+              color: CustomColors.primary,
+              child: textstyle1(text: "Multi-line comments", size: 20),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              color: CustomColors.dark,
+              child: Column(children: [
+                textstyle1(
+                  text: """
+Multi-line comments can span over as many lines as you want. These start with /* and end with */.
+""",
+                  align: TextAlign.start,
+                  size: 15,
+                  weight: FontWeight.normal,
+                ),
+                Codeblock(
+                  code: multiline,
+                  language: "cpp",
+                ),
+              ]),
+            ),
+            NoteCard([
+              textstyle1(
+                text: "Note",
+                size: 20,
+                color: CustomColors.primary,
               ),
-            ],
-          )
-        ]),
-      ),
+              Container(
+                padding: EdgeInsets.all(5),
+              ),
+              textstyle1(
+                  text:
+                      'Only text after // is considered a comment, so you can put comments after code statements as shown in example.',
+                  align: TextAlign.start,
+                  weight: FontWeight.normal),
+              Container(
+                padding: EdgeInsets.all(5),
+              ),
+            ])
+          ],
+        )
+      ]),
     );
   }
 }

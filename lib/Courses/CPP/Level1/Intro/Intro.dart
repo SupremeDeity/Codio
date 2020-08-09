@@ -23,19 +23,16 @@ class _CPPIntroState extends State<CPPIntro> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: _widgets[index],
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: index,
-          onTap: onTap,
-          items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.looks_one), title: Text("1")),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.looks_two), title: Text("2"))
-          ],
-        ),
+    return Scaffold(
+      body: _widgets[index],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: index,
+        onTap: onTap,
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.looks_one), title: Text("1")),
+          BottomNavigationBarItem(icon: Icon(Icons.looks_two), title: Text("2"))
+        ],
       ),
     );
   }

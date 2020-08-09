@@ -1,17 +1,24 @@
-import 'dart:math';
+///
+/// SplashScreen.dart - SupremeDeity (https://github.com/SupremeDeity
+/// Description: Shows Splash Screen
+///
 
 import 'package:Codio/Components/CustomColors.dart';
-import 'package:Codio/Components/PremadeStyle.dart';
+import 'package:Codio/Components/TextStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:async';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 void _navigate(BuildContext context, Widget navTo) {
-  Navigator.pushReplacement(
-      context, MaterialPageRoute(builder: (context) => navTo));
+  Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => navTo));
 }
 
+/// @param navTo: Widget to navigate to after showing splash screen.
+///
+/// Show Splash Screen and then navigate to the widget passed in as argument.
+/// The splash screen duration is 1-2 seconds.
+/// This DOES NOT LOAD ARG WIDGET ASYNCHRONOUSLY.
 class SplashScreen extends StatefulWidget {
   final Widget navTo;
   SplashScreen(this.navTo);
@@ -32,10 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<bool> _mockCheckForSession() async {
-    final Random _rand = new Random();
-    final int _num =
-        (((2 + _rand.nextInt(2 - 1)) + _rand.nextDouble()) * 1000).toInt();
-    await Future.delayed(Duration(milliseconds: _num), () {});
+    await Future.delayed(Duration(seconds: 1), () {});
 
     return true;
   }

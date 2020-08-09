@@ -1,5 +1,5 @@
 ///
-/// Codeblock.dart - SupremeDeity (https://github.com/SupremeDeity
+/// Codeblock.dart - SupremeDeity (https://github.com/SupremeDeity)
 /// Description: A wrapper component around flutter_highlight for easy display of codeblocks
 ///
 
@@ -9,6 +9,7 @@ import 'package:flutter_highlight/flutter_highlight.dart';
 
 import 'package:flutter_highlight/themes/vs2015.dart';
 
+/// Create a codeblock with syntax-highlighting.
 class Codeblock extends StatelessWidget {
   final String code;
   final String language;

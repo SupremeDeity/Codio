@@ -1,4 +1,4 @@
-import 'package:Codio/Courses/CPP/Level1/Level1Index.dart';
+import 'Courses/CPP/Level1/Level1Index.dart';
 import 'package:Codio/Courses/CPP/Level2/Level2Index.dart';
 import 'package:Codio/SplashScreen.dart';
 import 'package:flutter/material.dart';
