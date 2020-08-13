@@ -3,12 +3,10 @@
 /// Description: Shows Splash Screen
 ///
 
-import 'package:Codio/Components/CustomColors.dart';
 import 'package:Codio/Components/TextStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:async';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 void _navigate(BuildContext context, Widget navTo) {
   Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => navTo));
@@ -47,17 +45,16 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.dark,
+      backgroundColor: Theme.of(context).primaryColor,
       body: Center(
           child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-            SpinKitThreeBounce(color: CustomColors.secondary, size: 50.0),
-            Container(
-              padding: EdgeInsets.all(5),
-            ),
-            textstyle1(text: "LOADING...", size: 40)
+            textstyle1(
+                text: "LOADING...",
+                size: 40,
+                color: Theme.of(context).primaryColorLight)
           ])),
     );
   }

@@ -1,13 +1,16 @@
+import 'package:flutter_highlight/themes/vs.dart';
+import 'package:flutter_highlight/themes/vs2015.dart';
+
 ///
 /// Codeblock.dart - SupremeDeity (https://github.com/SupremeDeity)
 /// Description: A wrapper component around flutter_highlight for easy display of codeblocks
 ///
 
-import './CustomColors.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 
-import 'package:flutter_highlight/themes/vs2015.dart';
+import 'CustomColors.dart';
 
 /// Create a codeblock with syntax-highlighting.
 class Codeblock extends StatelessWidget {
@@ -18,31 +21,33 @@ class Codeblock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context).hintColor == CustomColors.light
+        ? vsTheme
+        : vs2015Theme;
     return Container(
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-                color: CustomColors.primary, blurRadius: 2.0, spreadRadius: -4)
+                color: Theme.of(context).accentColor,
+                blurRadius: 2.0,
+                spreadRadius: -4)
           ],
         ),
         child: Card(
-          color: CustomColors.dark,
+          color: Theme.of(context).primaryColor,
           child: Column(
             children: [
               Container(
                   padding: EdgeInsets.all(3),
                   child:
                       Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                    Text(
-                      language,
-                      style: TextStyle(
-                        letterSpacing: 2,
-                        fontFamily: "Roboto",
-                        color: Colors.white70,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    )
+                    Text(language,
+                        style: GoogleFonts.abel(
+                          letterSpacing: 2,
+                          color: Theme.of(context).primaryColorLight,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w900,
+                        ))
                   ])),
               Container(
                   width: double.infinity,
@@ -50,8 +55,8 @@ class Codeblock extends StatelessWidget {
                     code,
                     padding: EdgeInsets.all(4),
                     language: language,
-                    theme: vs2015Theme,
-                    textStyle: TextStyle(fontFamily: "FiraCode"),
+                    theme: theme,
+                    textStyle: GoogleFonts.firaCode(),
                   )),
             ],
           ),

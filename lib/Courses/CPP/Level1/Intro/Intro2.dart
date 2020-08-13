@@ -6,7 +6,6 @@ import 'package:Codio/Components/Bars.dart';
 import 'package:Codio/Components/Codeblock.dart';
 import 'package:Codio/Components/TextStyles.dart';
 import 'package:flutter/material.dart';
-import 'package:Codio/Components/CustomColors.dart';
 
 String code = """
 _fib:
@@ -27,21 +26,23 @@ class Intro2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.darker,
-      appBar: header(),
+      backgroundColor: Theme.of(context).backgroundColor,
+      appBar: header(context),
       body: ListView(children: [
         Column(
           children: [
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(10),
-              color: CustomColors.primary,
-              child:
-                  textstyle1(text: "Low-Level programing language", size: 20),
+              color: Theme.of(context).accentColor,
+              child: textstyle1(
+                  text: "Low-Level programing language",
+                  size: 20,
+                  color: Theme.of(context).primaryColorLight),
             ),
             Container(
               padding: EdgeInsets.all(10),
-              color: CustomColors.dark,
+              color: Theme.of(context).primaryColor,
               child: textstyle1(
                   text: """
 A low-level programing language is harder to learn, read and understand than a high-level programing language and are mostly dependent on a single type of computer, meaning that different versions of the same code will need to be written to make the code work in different computers.
@@ -51,26 +52,30 @@ Machine language is a language the computer directly understands, its a low-leve
 Low-level languages provide a lot of control over the hardware. Assembly, FORTRAN, COBOL, Ada are examples of low-level programing languages.""",
                   align: TextAlign.start,
                   size: 15,
-                  weight: FontWeight.normal),
+                  weight: FontWeight.normal,
+                  color: Theme.of(context).primaryColorLight),
             ),
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(10),
-              color: CustomColors.primary,
-              child: textstyle1(text: "Example", size: 20),
+              color: Theme.of(context).accentColor,
+              child: textstyle1(
+                  text: "Example",
+                  size: 20,
+                  color: Theme.of(context).primaryColorLight),
             ),
             Container(
               padding: EdgeInsets.all(10),
-              color: CustomColors.dark,
+              color: Theme.of(context).primaryColor,
               child: Column(children: [
                 textstyle1(
-                  text: """
+                    text: """
 Just in case you were wondering how a low-level language looks like, this is x86-64 Assembly code for calculating fibonacci number:
 """,
-                  align: TextAlign.start,
-                  size: 15,
-                  weight: FontWeight.normal,
-                ),
+                    align: TextAlign.start,
+                    size: 15,
+                    weight: FontWeight.normal,
+                    color: Theme.of(context).primaryColorLight),
                 Codeblock(code: code, language: "x86asm")
               ]),
             ),

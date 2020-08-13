@@ -1,10 +1,9 @@
-import 'package:Codio/Courses/CPP/Level1/Variables/Variables1.dart';
-import 'package:Codio/Courses/CPP/Level1/Variables/Variables2.dart';
-
 ///
 /// Intro.dart - SupremeDeity (https://github.com/SupremeDeity
 ///
 
+import 'package:Codio/Courses/CPP/Level1/Variables/Variables1.dart';
+import 'package:Codio/Courses/CPP/Level1/Variables/Variables2.dart';
 import 'package:flutter/material.dart';
 
 class CppVariables extends StatefulWidget {
@@ -28,6 +27,9 @@ class _CppVariablesState extends State<CppVariables> {
       body: _widgets[index],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
+        backgroundColor: Theme.of(context).primaryColor,
+        unselectedItemColor: Theme.of(context).primaryColorLight,
+        selectedItemColor: Theme.of(context).accentColor,
         onTap: onTap,
         items: [
           BottomNavigationBarItem(

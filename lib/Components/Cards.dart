@@ -3,7 +3,6 @@
 /// Description: Custom Cards for use in Codio
 ///
 
-import './CustomColors.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
@@ -17,7 +16,7 @@ class CustomCard extends StatelessWidget {
         width: 300,
         child: Card(
           elevation: 6,
-          color: CustomColors.dark,
+          color: Theme.of(context).primaryColor,
           child: Column(mainAxisSize: MainAxisSize.min, children: [
             Container(
               padding: EdgeInsets.all(15),
@@ -35,18 +34,14 @@ class ButtonCard extends StatelessWidget {
   final Function() onTap;
   final Color color;
   final Color disabledColor;
-  ButtonCard(
-      {this.content,
-      this.onTap,
-      this.color = CustomColors.primary,
-      this.disabledColor});
+  ButtonCard({this.content, this.onTap, this.color, this.disabledColor});
 
   @override
   Widget build(BuildContext context) {
     return Container(
         margin: EdgeInsets.all(5),
         child: RaisedButton(
-          color: color,
+          color: color ?? Theme.of(context).accentColor,
           disabledColor: disabledColor,
           onPressed: onTap,
           child: Flex(
@@ -70,7 +65,7 @@ class NoteCard extends StatelessWidget {
       alignment: Alignment.topLeft,
       child: Card(
           elevation: 6,
-          color: CustomColors.dark,
+          color: Theme.of(context).primaryColor,
           child: Container(
             padding: EdgeInsets.all(10),
             child: Column(

@@ -3,7 +3,6 @@
 /// Description: Generate Route
 ///
 
-import 'package:Codio/Components/Bars.dart';
 import 'package:Codio/Components/TextStyles.dart';
 import 'package:Codio/IndexManager.dart';
 import 'package:Codio/LevelManager.dart';
@@ -23,9 +22,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => Codio());
       case '/LevelManager':
         if (args is String) {
-          var builder = (_) => LevelManager(args);
-
-          return MaterialPageRoute(builder: builder);
+          return MaterialPageRoute(builder: (_) => LevelManager(args));
         }
         return errorRoute(settings);
       case '/IndexManager':
@@ -42,8 +39,6 @@ class RouteGenerator {
     var args = settings.arguments;
     return MaterialPageRoute(builder: (_) {
       return Scaffold(
-        appBar: header(),
-        bottomNavigationBar: footer(),
         body: Column(children: [
           textstyle1(text: "An Error Occured...", color: Colors.red, size: 20),
           textstyle1(
@@ -53,10 +48,11 @@ class RouteGenerator {
               weight: FontWeight.normal),
           if (args != null)
             (textstyle1(
-                text: "Arguments: " + args.toString(),
-                color: Colors.red,
-                size: 15,
-                weight: FontWeight.normal)),
+              text: "Arguments: " + args.toString(),
+              color: Colors.red,
+              size: 15,
+              weight: FontWeight.normal,
+            )),
           textstyle1(
               text:
                   "Please inform developers about this error with the given details and how to reproduce this error.",

@@ -1,15 +1,13 @@
-import 'package:Codio/RouteGenerator.dart';
-
 ///
 /// Buttons.dart - SupremeDeity (https://github.com/SupremeDeity)
 /// Description: Customized Raised Buttons for showing courses
 ///
 
-import './CustomColors.dart';
+import 'package:Codio/RouteGenerator.dart';
+import 'TextStyles.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
-import 'TextStyles.dart';
 
 /// Button Template.
 class ButtonStyleOne extends StatelessWidget {
@@ -40,7 +38,7 @@ class ButtonStyleOne extends StatelessWidget {
     return ButtonTheme(
         minWidth: 200,
         child: RaisedButton(
-            color: CustomColors.primary,
+            color: Theme.of(context).accentColor,
             onPressed: (routeHandle == null
                 ? () => RouteGenerator.navigate(context, widgetHandle)
                 : routeHandle),
@@ -56,7 +54,7 @@ class ButtonStyleOne extends StatelessWidget {
                 ),
                 textstyle4(
                     text: name,
-                    color: CustomColors.dark,
+                    color: Theme.of(context).primaryColor,
                     size: 15,
                     weight: FontWeight.normal),
               ],

@@ -1,6 +1,5 @@
 import 'package:Codio/Components/Bars.dart';
 import 'package:Codio/Components/Cards.dart';
-import 'package:Codio/Components/CustomColors.dart';
 import 'package:Codio/Components/TextStyles.dart';
 import 'package:Codio/RouteGenerator.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +32,8 @@ List<Widget> _createWidgets(context) {
           Container(
             padding: EdgeInsets.all(2),
           ),
-          textstyle1(text: info[i]['name'])
+          textstyle1(
+              text: info[i]['name'], color: Theme.of(context).primaryColorLight)
         ]));
   }
   return widgets;
@@ -43,13 +43,13 @@ class Level2Index extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: header(),
-      backgroundColor: CustomColors.darker,
+      appBar: header(context),
+      backgroundColor: Theme.of(context).backgroundColor,
       body: GridView.count(
         crossAxisCount: 3,
         children: _createWidgets(context),
       ),
-      bottomNavigationBar: footer(),
+      bottomNavigationBar: footer(context),
     );
   }
 }

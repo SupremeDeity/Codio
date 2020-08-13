@@ -27,11 +27,17 @@ class _CPPIntroState extends State<CPPIntro> {
       body: _widgets[index],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
+        backgroundColor: Theme.of(context).primaryColor,
+        unselectedItemColor: Theme.of(context).primaryColorLight,
+        selectedItemColor: Theme.of(context).accentColor,
         onTap: onTap,
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.looks_one), title: Text("1")),
-          BottomNavigationBarItem(icon: Icon(Icons.looks_two), title: Text("2"))
+          BottomNavigationBarItem(
+            icon: Icon(Icons.looks_two),
+            title: Text("2"),
+          )
         ],
       ),
     );

@@ -4,7 +4,6 @@
 ///
 
 import 'package:Codio/Components/Cards.dart';
-import 'package:Codio/Components/CustomColors.dart';
 import 'package:Codio/Components/TextStyles.dart';
 import 'package:flutter/material.dart';
 import '../../Components/Bars.dart';
@@ -43,15 +42,19 @@ class CppLevel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.darker,
-      appBar: header(),
+      backgroundColor: Theme.of(context).backgroundColor,
+      appBar: header(context),
       body: Center(
         child: CustomCard(widgets: [
-          textstyle4(text: "C++", size: 15, weight: FontWeight.bold),
+          textstyle4(
+              text: "C++",
+              size: 15,
+              weight: FontWeight.bold,
+              color: Theme.of(context).primaryColorLight),
           ..._createWidgets(context)
         ]),
       ),
-      bottomNavigationBar: footer(),
+      bottomNavigationBar: footer(context),
     );
   }
 }
