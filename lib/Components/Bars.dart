@@ -8,6 +8,7 @@ import 'package:Codio/ThemeChanger.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+/// Header appbar.
 AppBar header(BuildContext context) {
   return AppBar(
     title: textstyle3(
@@ -17,6 +18,7 @@ AppBar header(BuildContext context) {
   );
 }
 
+/// Footer widget
 Widget footer(BuildContext context) {
   return Container(
     height: 40,
@@ -29,6 +31,7 @@ Widget footer(BuildContext context) {
   );
 }
 
+/// Footer widget for changing theme.
 Widget footerTheme(BuildContext context) {
   return Container(
     height: 40,

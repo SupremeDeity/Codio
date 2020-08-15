@@ -6,6 +6,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+/// Text Style that uses roboto as the font.
 Text textstyle1({
   String text,
   double size = 12,
@@ -25,6 +26,7 @@ Text textstyle1({
   );
 }
 
+/// Text Style that uses firaCode as the font.
 Text textstyle2(
     {String text,
     double size = 12,
@@ -43,6 +45,7 @@ Text textstyle2(
   );
 }
 
+/// Text Style that uses josefinSans as the font.
 Text textstyle3({
   String text,
   double size = 12,
@@ -62,6 +65,7 @@ Text textstyle3({
   );
 }
 
+/// Text Style that uses exo as the font.
 Text textstyle4({
   String text,
   double size = 12,

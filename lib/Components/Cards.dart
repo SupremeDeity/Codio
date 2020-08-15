@@ -5,6 +5,9 @@
 
 import 'package:flutter/material.dart';
 
+/// Customised card for use in the application.
+///
+/// This card is customised to fit the needs of the application.
 class CustomCard extends StatelessWidget {
   final List<Widget> widgets;
 
@@ -29,6 +32,9 @@ class CustomCard extends StatelessWidget {
   }
 }
 
+/// Customised Card which can be used as a button.
+///
+/// This card is wrapped inside a button to add the characterstics of a button to it.
 class ButtonCard extends StatelessWidget {
   final List<Widget> content;
   final Function() onTap;
@@ -54,6 +60,7 @@ class ButtonCard extends StatelessWidget {
   }
 }
 
+/// A customised card to be used when providing notes throughout the course.
 class NoteCard extends StatelessWidget {
   final List<Widget> content;
 

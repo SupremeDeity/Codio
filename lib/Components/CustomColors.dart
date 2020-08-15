@@ -3,12 +3,12 @@
 /// Description:
 /// A static class with color constants.
 /// This class is 'static' and cannot be instantiated.
-/// All Colors defined here are based on Ionic's predefined color constants.
+/// Most Colors defined here are based on Ionic's predefined color constants.
 ///
 
 import 'package:flutter/material.dart';
 
-/// Static Class for custom colors based on the Ionic Theme Colors.
+/// Static Class for custom colors.
 class CustomColors {
   // Make the class non-instantiable
   CustomColors._();

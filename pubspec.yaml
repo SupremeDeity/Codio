@@ -13,7 +13,8 @@ dependencies:
   google_fonts: ^1.1.0
   provider: null
   shared_preferences: ^0.5.8
-  #flutter_spinkit: "^4.1.2"
+  flutter_spinkit: "^4.1.2"
+  flutter_native_splash: ^0.1.9
 
 dev_dependencies:
   flutter_test:
@@ -30,3 +31,9 @@ flutter_icons:
   android: "launcher_icon"
   ios: false
   image_path: "assets/icons/CodioIconBlack.png"
+
+flutter_native_splash:
+  image: assets/icons/splash.png
+  color: "22241e"
+  android_disable_fullscreen: true
+  ios: false

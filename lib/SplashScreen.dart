@@ -8,15 +8,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:async';
 
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+
 void _navigate(BuildContext context, Widget navTo) {
   Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => navTo));
 }
 
-/// @param navTo: Widget to navigate to after showing splash screen.
+/// navTo: Widget to navigate to after showing splash screen.
 ///
 /// Show Splash Screen and then navigate to the widget passed in as argument.
 /// The splash screen duration is 1-2 seconds.
-/// This DOES NOT LOAD ARG WIDGET ASYNCHRONOUSLY.
+/// This DOES NOT LOAD ARGUMENT WIDGET ASYNCHRONOUSLY.
 class SplashScreen extends StatefulWidget {
   final Widget navTo;
   SplashScreen(this.navTo);
@@ -51,10 +53,9 @@ class _SplashScreenState extends State<SplashScreen> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-            textstyle1(
-                text: "LOADING...",
-                size: 40,
-                color: Theme.of(context).primaryColorLight)
+            SpinKitWave(
+              color: Theme.of(context).primaryColorLight,
+            )
           ])),
     );
   }

@@ -1,11 +1,13 @@
 import 'package:Codio/Components/Bars.dart';
 import 'package:Codio/Components/Cards.dart';
 import 'package:Codio/Components/TextStyles.dart';
+import 'package:Codio/Courses/CPP/Level2/PreprocessorDirectives/PreprocessorDirectives.dart';
 import 'package:Codio/RouteGenerator.dart';
+import 'package:Codio/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
 var info = [
-  {"name": "Pre-processor Directives", "nav": Scaffold()},
+  {"name": "Pre-processor Directives", "nav": PreprocessorDirectives()},
   {"name": "Namespace", "nav": Scaffold()},
   {"name": "Function Basics", "nav": Scaffold()},
   {"name": "Scopes", "nav": Scaffold()},
@@ -24,7 +26,8 @@ List<Widget> _createWidgets(context) {
 
   for (var i = 0; i < info.length; i++) {
     widgets.add(ButtonCard(
-        onTap: () => RouteGenerator.navigate(context, info[i]['nav']),
+        onTap: () =>
+            RouteGenerator.navigate(context, SplashScreen(info[i]['nav'])),
         content: [
           textstyle1(
               text: (i + 1).toString() + "/" + info.length.toString(),
