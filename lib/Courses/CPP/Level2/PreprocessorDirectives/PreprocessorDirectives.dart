@@ -22,7 +22,7 @@ int main() {
 }
 """;
 
-class PreprocessorDirectives extends StatelessWidget {
+class CppPreDirectives extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

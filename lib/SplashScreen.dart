@@ -3,7 +3,6 @@
 /// Description: Shows Splash Screen
 ///
 
-import 'package:Codio/Components/TextStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:async';
