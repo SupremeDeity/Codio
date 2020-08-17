@@ -11,6 +11,7 @@ class ThemeChanger with ChangeNotifier {
     _loadPrefs();
   }
 
+  /// Whether Dark theme is being used or not.
   bool get darkTheme => _darkTheme;
 
   toggleTheme() {
