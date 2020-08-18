@@ -1,11 +1,14 @@
 import 'package:Codio/Components/Bars.dart';
 import 'package:Codio/Components/Cards.dart';
 import 'package:Codio/Components/TextStyles.dart';
-import 'package:Codio/Courses/CPP/Level2/ConditionalStatements/Arithmetics/Arithmetics.dart';
+import 'package:Codio/Courses/CPP/Level2/Arithmetics/Arithmetics.dart';
 import 'package:Codio/Courses/CPP/Level2/ConditionalStatements/ConditionalStatements.dart';
 import 'package:Codio/Courses/CPP/Level2/Functions/Functions.dart';
+import 'package:Codio/Courses/CPP/Level2/Input/Input.dart';
+import 'package:Codio/Courses/CPP/Level2/Loops/Loops.dart';
 import 'package:Codio/Courses/CPP/Level2/Namespace/Namespace.dart';
 import 'package:Codio/Courses/CPP/Level2/PreprocessorDirectives/PreprocessorDirectives.dart';
+import 'package:Codio/Courses/CPP/Level2/SwitchStatement/SwitchStatement.dart';
 import 'package:Codio/Courses/CPP/Level2/Ternary/Ternary.dart';
 import 'package:Codio/RouteGenerator.dart';
 import 'package:Codio/SplashScreen.dart';
@@ -18,9 +21,9 @@ var info = [
   {"name": "Conditional statements", "nav": CppConditional()},
   {"name": "Ternary operator", "nav": CppTernary()},
   {"name": "Basic Arthemetics", "nav": CppArithmetics()},
-  {"name": "Loop", "nav": Scaffold()},
-  {"name": "Taking Input", "nav": Scaffold()},
-  {"name": "Switch Statement", "nav": Scaffold()},
+  {"name": "Loops", "nav": CppLoops()},
+  {"name": "Taking Input", "nav": CppInput()},
+  {"name": "Switch Statement", "nav": CppSwitchStatement()},
   {"name": "Array", "nav": Scaffold()},
   {"name": "Dynamic Array", "nav": Scaffold()},
 ];
