@@ -2,6 +2,7 @@ import 'package:Codio/Components/Bars.dart';
 import 'package:Codio/Components/Cards.dart';
 import 'package:Codio/Components/TextStyles.dart';
 import 'package:Codio/Courses/CPP/Level2/Arithmetics/Arithmetics.dart';
+import 'package:Codio/Courses/CPP/Level2/Array/Array.dart';
 import 'package:Codio/Courses/CPP/Level2/ConditionalStatements/ConditionalStatements.dart';
 import 'package:Codio/Courses/CPP/Level2/Functions/Functions.dart';
 import 'package:Codio/Courses/CPP/Level2/Input/Input.dart';
@@ -24,7 +25,7 @@ var info = [
   {"name": "Loops", "nav": CppLoops()},
   {"name": "Taking Input", "nav": CppInput()},
   {"name": "Switch Statement", "nav": CppSwitchStatement()},
-  {"name": "Array", "nav": Scaffold()},
+  {"name": "Array", "nav": CppArray()},
   {"name": "Dynamic Array", "nav": Scaffold()},
 ];
 
