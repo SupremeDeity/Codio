@@ -48,7 +48,7 @@ class CppArray extends StatelessWidget {
                 child: Column(children: [
                   textstyle1(
                       text: """
-Arrays are a way to store multiple of the same type of value in a single variable. There are both fixed-size arrays and dynamic arrays. We will only be talking about fixed-size arrays in this chapter.""",
+Arrays are a way to store multiple of the same type of value in a single variable. There are both fixed-size arrays and arrays that can be resized. We will only be talking about fixed-size arrays in this chapter.""",
                       align: TextAlign.start,
                       size: 15,
                       weight: FontWeight.normal,
